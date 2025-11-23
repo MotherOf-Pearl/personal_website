@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional portfolio showcasing expertise, research, and thought leadership">
+    <title>Your Name | Professional Portfolio & Thought Leadership</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a365d;
+            --primary-dark: #0f2027;
+            --accent: #2563eb;
+            --accent-light: #3b82f6;
+            --text: #1e293b;
+            --text-light: #64748b;
+            --bg: #ffffff;
+            --bg-light: #f8fafc;
+            --border: #e2e8f0;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --shadow-lg: rgba(0, 0, 0, 0.12);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--bg);
+            font-size: 16px;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Header & Navigation */
+        header {
+            background: var(--primary);
+            color: white;
+            padding: 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px var(--shadow);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: opacity 0.2s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: white;
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, #1e3a5f 100%);
+            color: white;
+            padding: 6rem 2rem 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><defs><pattern id="grid" width="100" height="100" patternUnits="userSpaceOnUse"><path d="M 100 0 L 0 0 0 100" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.4;
+        }
+
+        .hero-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            max-width: 700px;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-light);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* About Section */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 3rem;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text);
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p:last-child {
+            margin-bottom: 0;
+        }
+
+        .credentials {
+            background: var(--bg-light);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .credentials h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            color: var(--text);
+        }
+
+        .cred-list {
+            list-style: none;
+        }
+
+        .cred-list li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: start;
+            gap: 0.75rem;
+        }
+
+        .cred-list li:last-child {
+            border-bottom: none;
+        }
+
+        .cred-icon {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0.2rem;
+        }
+
+        /* Expertise Grid */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .expertise-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow-lg);
+            border-color: var(--accent);
+        }
+
+        .expertise-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .expertise-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .expertise-card p {
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        /* Articles Section */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .article-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px var(--shadow-lg);
+        }
+
+        .article-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            padding: 1.5rem;
+            color: white;
+        }
+
+        .article-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .article-meta {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .article-content {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-content p {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.7;
+        }
+
+        .read-more {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s;
+        }
+
+        .read-more:hover {
+            gap: 0.75rem;
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px var(--shadow-lg);
+            border-left: 4px solid var(--accent);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-year {
+            background: var(--bg-light);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 600;
+        }
+
+        .project-card p {
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            background: var(--bg-light);
+            color: var(--accent);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        /* Media Section */
+        .media-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .media-item {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px var(--shadow);
+            border: 1px solid var(--border);
+            display: flex;
+            gap: 2rem;
+            align-items: start;
+            transition: all 0.3s;
+        }
+
+        .media-item:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px var(--shadow-lg);
+            border-left: 4px solid var(--accent);
+        }
+
+        .media-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-light);
+            border-radius: 10px;
+        }
+
+        .media-content {
+            flex-grow: 1;
+        }
+
+        .media-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+        }
+
+        .media-meta {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .media-content p {
+            color: var(--text-light);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        .media-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .media-link:hover {
+            gap: 0.75rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: white;
+            padding: 4rem 2rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-about h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-about p {
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .footer-section h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 1;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            text-align: center;
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1.5rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .articles-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .media-item {
+                flex-direction: column;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Your Name</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#expertise">Expertise</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#media">Media & Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Your Name</h1>
+            <div class="hero-subtitle">Professional Title | Thought Leader | [Your Field] Expert</div>
+            <div class="hero-description">
+                I am a [describe your professional identity - e.g., "policy researcher and strategic advisor"] 
+                dedicated to [your mission/purpose]. Through rigorous analysis, strategic thinking, and 
+                collaborative engagement, I work to [impact/goal]. My work spans [areas of focus], 
+                with a particular emphasis on [specific expertise].
+            </div>
+            <div class="hero-cta">
+                <a href="#contact" class="btn btn-primary">Get In Touch</a>
+                <a href="#articles" class="btn btn-secondary">Read My Work</a>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- About Section -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <h2 class="section-title">About</h2>
+                <p class="section-subtitle">Understanding who I am, what drives me, and how I contribute to my field</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>
+                        [Write a compelling first-person narrative about yourself. This should be authentic and descriptive. 
+                        For example: "With over [X] years of experience in [field], I have dedicated my career to [purpose]. 
+                        My journey began when [relevant background story], which led me to develop a deep expertise in [areas]."
+                    </p>
+                    <p>
+                        [Continue describing your professional journey, key experiences, and what makes you unique. 
+                        "Throughout my career, I have [achievements/roles]. I am particularly passionate about [specific interests], 
+                        and I believe that [your philosophy or approach] is essential for [outcome]."
+                    </p>
+                    <p>
+                        [Conclude with your current focus and future direction. "Today, I focus on [current work], 
+                        collaborating with [types of organizations/people] to [impact]. I am committed to [values/mission], 
+                        and I look forward to [future goals]."
+                    </p>
+                </div>
+                <div class="credentials">
+                    <h3>Credentials & Affiliations</h3>
+                    <ul class="cred-list">
+                        <li>
+                            <span class="cred-icon">🎓</span>
+                            <div>
+                                <strong>Education</strong><br>
+                                [Degree], [Institution], [Year]
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cred-icon">🏛️</span>
+                            <div>
+                                <strong>Professional Affiliations</strong><br>
+                                [Chamber of Commerce, Think Tank, Research Organization, etc.]
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cred-icon">⭐</span>
+                            <div>
+                                <strong>Recognition</strong><br>
+                                [Awards, honors, or notable achievements]
+                            </div>
+                        </li>
+                        <li>
+                            <span class="cred-icon">🤝</span>
+                            <div>
+                                <strong>Board Positions / Roles</strong><br>
+                                [Current or past leadership positions]
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expertise Section -->
+        <section class="section" id="expertise">
+            <div class="section-header">
+                <h2 class="section-title">Areas of Expertise</h2>
+                <p class="section-subtitle">Core competencies and specialized knowledge areas</p>
+            </div>
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <div class="expertise-icon">📊</div>
+                    <h3>Research & Analysis</h3>
+                    <p>Conducting rigorous quantitative and qualitative research to uncover insights, identify trends, and inform strategic decision-making. Expertise in [specific methodologies or areas].</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">🏛️</div>
+                    <h3>Policy Development</h3>
+                    <p>Engaging with governmental bodies, think tanks, and policy organizations to develop evidence-based solutions to complex challenges. Experience in [specific policy areas].</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">💼</div>
+                    <h3>Strategic Consulting</h3>
+                    <p>Providing strategic guidance to organizations, helping them navigate challenges and capitalize on opportunities. Specialized in [specific consulting areas].</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">📝</div>
+                    <h3>Thought Leadership</h3>
+                    <p>Authoring articles, research papers, and analyses that contribute to public discourse and advance understanding in [your field]. Published in [venues].</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">🌐</div>
+                    <h3>Public Engagement</h3>
+                    <p>Speaking at conferences, participating in panels, and engaging with media to share insights and perspectives on [topics]. Regular contributor to [platforms].</p>
+                </div>
+                <div class="expertise-card">
+                    <div class="expertise-icon">🤝</div>
+                    <h3>Collaboration & Networking</h3>
+                    <p>Building strategic partnerships and fostering collaboration across sectors. Active member of [organizations] and contributor to [initiatives/networks].</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section class="section" id="articles">
+            <div class="section-header">
+                <h2 class="section-title">Articles & Insights</h2>
+                <p class="section-subtitle">Thought leadership, analysis, and perspectives on key issues</p>
+            </div>
+            <div class="articles-grid">
+                <article class="article-card">
+                    <div class="article-header">
+                        <h3>Article Title: Key Insight or Analysis</h3>
+                        <div class="article-meta">Published: [Date] | Category: [Category]</div>
+                    </div>
+                    <div class="article-content">
+                        <p>
+                            [Article summary - 2-3 sentences describing the key points, insights, or arguments presented. 
+                            This should give readers a clear sense of the value and perspective you're offering.]
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-header">
+                        <h3>Article Title: Exploring Industry Trends</h3>
+                        <div class="article-meta">Published: [Date] | Category: [Category]</div>
+                    </div>
+                    <div class="article-content">
+                        <p>
+                            [Article summary - Provide a compelling description that showcases your analytical depth 
+                            and unique perspective on the topic.]
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+                <article class="article-card">
+                    <div class="article-header">
+                        <h3>Article Title: Policy Implications and Analysis</h3>
+                        <div class="article-meta">Published: [Date] | Category: [Category]</div>
+                    </div>
+                    <div class="article-content">
+                        <p>
+                            [Article summary - Demonstrate your expertise and thought leadership through a well-crafted 
+                            description of the article's contributions to the field.]
+                        </p>
+                        <a href="#" class="read-more">Read Article →</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="section" id="projects">
+            <div class="section-header">
+                <h2 class="section-title">Projects & Achievements</h2>
+                <p class="section-subtitle">Notable work, initiatives, and accomplishments</p>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>Project Name: Significant Initiative</h3>
+                        </div>
+                        <span class="project-year">2024</span>
+                    </div>
+                    <p>
+                        [Detailed description of the project - what it was, your role, the challenges addressed, 
+                        and the outcomes achieved. Be specific about impact and results. For example: "Led a comprehensive 
+                        research initiative examining [topic], which involved [activities]. The project resulted in 
+                        [outcomes] and contributed to [impact]."
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">Policy</span>
+                        <span class="tag">Strategic Planning</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>Project Name: Collaborative Effort</h3>
+                        </div>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <p>
+                        [Describe another significant project or achievement. Include specific details about your 
+                        contribution, the collaborative nature if applicable, and the professional or societal impact. 
+                        Quantify results when possible.]
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Consulting</span>
+                        <span class="tag">Analysis</span>
+                        <span class="tag">Implementation</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-header">
+                        <div>
+                            <h3>Project Name: Research Publication</h3>
+                        </div>
+                        <span class="project-year">2023</span>
+                    </div>
+                    <p>
+                        [Describe a research project, publication, or analytical work. Explain the methodology, 
+                        key findings, and how it contributes to the field. Mention any recognition or adoption of 
+                        the work.]
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Research</span>
+                        <span class="tag">Publication</span>
+                        <span class="tag">Analysis</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Media & Publications -->
+        <section class="section" id="media">
+            <div class="section-header">
+                <h2 class="section-title">Media Appearances & Publications</h2>
+                <p class="section-subtitle">Research papers, media features, and speaking engagements</p>
+            </div>
+            <div class="media-list">
+                <div class="media-item">
+                    <div class="media-icon">📄</div>
+                    <div class="media-content">
+                        <h3>Research Paper: Title of Publication</h3>
+                        <div class="media-meta">Published in [Journal/Conference Name] | [Date]</div>
+                        <p>
+                            [Description of the research paper - the research question, methodology, key findings, 
+                            and contribution to the field. Mention any citations or recognition if applicable.]
+                        </p>
+                        <a href="#" class="media-link">Read Paper →</a>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-icon">📺</div>
+                    <div class="media-content">
+                        <h3>Media Feature: Interview or Article</h3>
+                        <div class="media-meta">[Publication/Platform Name] | [Date]</div>
+                        <p>
+                            [Description of the media appearance - what was discussed, the key points you made, 
+                            and the context of the interview or feature.]
+                        </p>
+                        <a href="#" class="media-link">View Feature →</a>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-icon">🎤</div>
+                    <div class="media-content">
+                        <h3>Speaking Engagement: Conference or Event</h3>
+                        <div class="media-meta">[Event Name] | [Location] | [Date]</div>
+                        <p>
+                            [Description of the speaking engagement - the topic, audience, key themes discussed, 
+                            and any notable outcomes or feedback.]
+                        </p>
+                        <a href="#" class="media-link">View Recording →</a>
+                    </div>
+                </div>
+                <div class="media-item">
+                    <div class="media-icon">📻</div>
+                    <div class="media-content">
+                        <h3>Podcast Appearance: Episode Title</h3>
+                        <div class="media-meta">[Podcast Name] | [Date]</div>
+                        <p>
+                            [Description of the podcast appearance - the topics discussed, insights shared, 
+                            and the value provided to listeners.]
+                        </p>
+                        <a href="#" class="media-link">Listen →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <div class="footer-content">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Get In Touch</h3>
+                    <p>
+                        I welcome opportunities for collaboration, speaking engagements, consulting projects, 
+                        and professional inquiries. Whether you're interested in research partnerships, policy 
+                        discussions, or strategic consulting, I'd be happy to connect.
+                    </p>
+                    <div class="social-links">
+                        <a href="mailto:your.email@example.com" title="Email">✉️</a>
+                        <a href="https://linkedin.com/in/yourprofile" title="LinkedIn">💼</a>
+                        <a href="https://twitter.com/yourhandle" title="Twitter">🐦</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#expertise">Expertise</a></li>
+                        <li><a href="#articles">Articles</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#media">Media & Publications</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Connect</h4>
+                    <ul class="footer-links">
+                        <li><a href="mailto:your.email@example.com">Email</a></li>
+                        <li><a href="https://linkedin.com/in/yourprofile">LinkedIn</a></li>
+                        <li><a href="https://twitter.com/yourhandle">Twitter</a></li>
+                        <li><a href="#contact">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2024 Your Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
